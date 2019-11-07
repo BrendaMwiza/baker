@@ -1,12 +1,12 @@
 from django import forms
-from .models import Post,Order
+from .models import Bakery,Order
 
-class PostForm(forms.ModelForm):
+class BakeryForm(forms.ModelForm):
     class Meta:
-        model = Post
-        fields = ['code'] 
+        model = Bakery
+        exclude = [] 
 
 class  OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['']      
+        exclude = ['post']      

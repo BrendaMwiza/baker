@@ -1,14 +1,14 @@
-from __future__ import unicode_literals
-
 from django.db import models
 
 class Categories(models.Model):
       category = models.CharField(max_length=32)
-
       def save_categories(self):
           self.save()
 
-class Post(models.Model):
+      def __str__(self):
+        return self.category
+
+class Bakery(models.Model):
       name = models.CharField(max_length=32)
       category = models.ForeignKey(Categories,on_delete=models.CASCADE)
       code = models.CharField(max_length=32)
@@ -18,15 +18,15 @@ class Post(models.Model):
       def save_post(self):
           self.save()
 
+      def __str__(self):
+        return self.name
 
 class Order(models.Model):
       name = models.CharField(max_length=32)
-      post = models.ForeignKey(Post,on_delete=models.CASCADE)
-      quantity= models.CharField(max_length=32)
+      quantity= models.IntegerField(default=0)
       category = models.ForeignKey(Categories,on_delete=models.CASCADE)
       order = models.ImageField(upload_to = 'pictures/')
-      zipcode = models.CharField(max_length=32)
-      contacts = models.IntegerField(default=+250)
+      phone = models.CharField(max_length=32)
 
       def save_order(self):
           self.save()
