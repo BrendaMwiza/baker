@@ -37,6 +37,7 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 
 .dropdown-submenu:hover>.dropdown-menu {
     display: block;
+    
 }
 
 .dropdown-submenu>a:after {
@@ -55,6 +56,10 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 
 .dropdown-submenu:hover>a:after {
     border-left-color: #fff;
+    
+}
+.dropdown-item:hover{
+    background-color: rgb(114, 117, 117);
 }
 </style>
 </head>
@@ -64,61 +69,37 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
       <a href="https://www.instagram.com/awwwards/" style="color: black;"><i class="fa fa-instagram" aria-hidden="true"></i></i></a>
       <a href="https://twitter.com/awwwards/" style="color: black;"><i class="fa fa-twitter" aria-hidden="true"></i></i></a>
       <a href="https://www.facebook.com/awwwards/" style="color: black;"><i class="fa fa-facebook" aria-hidden="true"></i></a></span></p>      
-      <nav class="navbar navbar-dark bg-transparent navbar-expand-sm">
-        <a class="navbar-brand" href="#">
-          <img src="/static/images/imageedit_4_9342328019.png" width="100" height="60" alt="logo"></a>
+      <nav class="navbar navbar-expand-sm" style="background-color: rgb(0, 0, 0, 0.4);">
+        <a class="navbar-brand" href="{% url 'page' %}">
+          <img src="/static/images/LogoSample_ByTailorBrands.jpg" width="100" height="60" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown" data-toggle="dropdown" style="color:black;">Products<b class="caret"></b></a>
-                    <ul class="dropdown-menu multi-level" style="background-color: transparent;">                                                     
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown" style="color:black;" data-toggle="dropdown">Breads</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Level 2</a></li> 
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown" style="color:black;" data-toggle="dropdown">Cookies</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Level 2</a></li> 
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown" style="color:black;" data-toggle="dropdown">Cakes</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Level 2</a></li> 
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown" style="color:black;" data-toggle="dropdown">Snacks</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Level 2</a></li> 
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown" style="color:black;" data-toggle="dropdown">Pastries</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Level 2</a></li> 
-                            </ul>
-                        </li>
-                    </ul>
-                </li>                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="color:rgb(255, 255, 255);text-decoration: none;" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Preview" style="background-color: transparent;">
+                        <a class="dropdown-item" href="{% url 'bread' %}">Breads</a>
+                        <a class="dropdown-item" href="{% url 'cookies' %}">Cookies</a>
+                        <a class="dropdown-item" href="{% url 'cakes' %}">Cakes</a>
+                        <a class="dropdown-item" href="{% url 'snacks' %}">Snacks</a>
+                        </div>
+                    </li>             
             </ul>        
         </div>
-        {% if user.is_authenticated %}
-        
-                <a href="" class="nav-item nav-link">Profile</a>
-                <a href="/logout" class="nav-item nav-link">Logout</a>
-            
-        {% else %}
-            <a class="nav-item nav-link" href="/accounts/login">Login</a>
-        
+{% if user.is_authenticated %}
+
+        <a href="" class="nav-item nav-link">Profile</a>
+        <a href="/logout" class="nav-item nav-link">Logout</a>
     
-        {% endif %}</div>
+{% else %}
+    <a class="nav-item nav-link" href="/accounts/login" style="color:rgb(255, 255, 255);">Login</a>
+
+
+{% endif %}</div>
     </nav>
 </div>
 </body>

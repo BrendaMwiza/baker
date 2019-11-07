@@ -10,3 +10,16 @@ from django.contrib import messages
 def page(request):
     return render(request,'all-pages/index.html',{})
 
+def bread(request):
+    return render(request,'all-pages/bread.html',{})
+
+def cookies(request):
+    return render(request,'all-pages/cookies.html',{})
+
+def cakes(request):
+    return render(request,'all-pages/cakes.html',{})
+
+def snacks(request):
+    return render(request,'all-pages/snacks.html',{}) 
+            
+
