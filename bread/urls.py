@@ -10,6 +10,7 @@ urlpatterns=[
     url(r'^cookies/$',views.cookies,name = 'cookies'),
     url(r'^snacks/$',views.snacks,name = 'snacks'),
     url(r'^about/$',views.about,name = 'about'),
+    url(r'^contact/$',views.contact,name = 'contact'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
