@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+<<<<<<< HEAD
 from django.contrib.auth import views
 
 urlpatterns = [
@@ -23,3 +24,12 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}),
 ]
+=======
+from django.conf.urls import url,include
+from django.contrib.auth import views 
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'',include('bread.urls')),  
+]
+>>>>>>> a49b7d6bd2068c3888052b51a1a4869cb0918bdc

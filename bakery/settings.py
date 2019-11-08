@@ -31,8 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     'bootstrap4',
     'bread',
+=======
+    'bread',
+    'bootstrap3',
+>>>>>>> a49b7d6bd2068c3888052b51a1a4869cb0918bdc
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,8 +85,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'baker',
+<<<<<<< HEAD
         'USER': 'alexie',
         'PASSWORD': 'root',
+=======
+        'USER': 'mwiza',
+    'PASSWORD':'mwiza',
+>>>>>>> a49b7d6bd2068c3888052b51a1a4869cb0918bdc
     }
 }
 
@@ -123,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
@@ -131,3 +142,7 @@ STATICFILES_DIRS = [
 # configuring the location for media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+=======
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+>>>>>>> a49b7d6bd2068c3888052b51a1a4869cb0918bdc

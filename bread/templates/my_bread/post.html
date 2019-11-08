@@ -1,0 +1,38 @@
+{% load bootstrap3 %}
+ {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+{% block styles %} 
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/news.css' %}">
+{% endblock %}
+
+</head>
+
+<body style="background-image: url(https://thewallpaper.co//wp-content/uploads/2016/09/backgrounds-best-showcase-of-surrealism-high-definition-widescreen-tablet-art-hd-desktop-wallpapers-colourful-paintings-1200x850.jpg);background-size: 1200px 670px;">
+  <div class="container">
+    <div class="well" style="color:rgb(39, 18, 1);background-color: rgb(243, 197, 145);width: 600px;margin-top:80px;float: right; ">
+        <form  action="{%url 'new_post'%}" method="post" enctype="multipart/form-data">
+          {%csrf_token%}
+      
+          {% bootstrap_form form%}
+          <input type="submit" class="btn btn-danger btn-lg" value="Post">
+        </form>
+    </div>
+      
+  </div>
+  
+
+   {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %} {% endblock %}
+
+</body>
+
+</html>
