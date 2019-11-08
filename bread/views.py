@@ -21,5 +21,7 @@ def cakes(request):
 
 def snacks(request):
     return render(request,'all-pages/snacks.html',{}) 
-            
+
+def about(request):
+    return render(request,'all-pages/about.html',{})             
 

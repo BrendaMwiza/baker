@@ -9,6 +9,7 @@ urlpatterns=[
     url(r'^cakes/$',views.cakes,name = 'cakes'),
     url(r'^cookies/$',views.cookies,name = 'cookies'),
     url(r'^snacks/$',views.snacks,name = 'snacks'),
+    url(r'^about/$',views.about,name = 'about'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
