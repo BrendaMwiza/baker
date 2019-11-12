@@ -1,13 +1,17 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .models import Categories,Bakery,Order
+from .forms import OrderForm,BakeryForm
 
 def page(request):
     current_user = request.user
     return render(request,'all-pages/index.html',{})
+
+    images=Bakery.objects.all()
+    return render(request,'all-pages/index.html',{"images":images})
 
 def bread(request):
     return render(request,'all-pages/bread.html',{})
@@ -26,16 +30,9 @@ def about(request):
 
 def contact(request):
     return render(request,'all-pages/contact.html',{}) 
-=======
-from django.shortcuts import render,redirect
-from .models import Bakery,Order,Categories
-# from django.contrib.auth.decorators import login_required
-from .forms import BakeryForm,OrderForm
 
-def index(request):
-    images=Bakery.objects.all()
-    return render(request,'my_bread/index.html',{"images":images})
-
+    
+@login_required(login_url='/accounts/login/')
 def new_post(request):
     current_user = request.user
     if request.method == 'POST':
@@ -44,20 +41,19 @@ def new_post(request):
             image = form.save(commit=False)
             image.user = current_user
             image.save()
-        return redirect('home')
+        return redirect('page')
 
     else:
         form = BakeryForm()
-    return render(request, 'my_bread/post.html', {"form": form})
+    return render(request, 'all-pages/post.html', {"form": form})
 
 
-# @login_required(login_url='/accounts/login/')
 def order(request):
     current_user = request.user
     order=Order.objects.all()
-    return render(request, 'my_bread/order.html', {"order":order})
+    return render(request, 'all-pages/order.html', {"order":order})
   
-# @login_required(login_url='/accounts/login/')
+
 def order_form(request):
    current_user = request.user
    order=Order.objects.all()
@@ -70,12 +66,9 @@ def order_form(request):
        return redirect('orderform')
    else:
        form = OrderForm()
-   return render(request, 'my_bread/orderform.html', {"form": form,"order":order})    
-
-def about(request):
-    return render(request,'my_bread/aboutus.html',{})
+   return render(request, 'all-pages/orderform.html', {"form": form,"order":order})    
 
 
 
 
->>>>>>> a49b7d6bd2068c3888052b51a1a4869cb0918bdc
+

@@ -29,11 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-<<<<<<< HEAD
 set -gx VIRTUAL_ENV "/home/alexie/Desktop/baker/virtual"
-=======
-set -gx VIRTUAL_ENV "/home/wecode/Baker/baker/virtual"
->>>>>>> origin/Anitha
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #!/home/alexie/Desktop/baker/virtual/bin/python
-=======
-#!/home/wecode/Baker/baker/virtual/bin/python
->>>>>>> origin/Anitha
 # -*- coding: utf-8 -*-
 import re
 import sys
